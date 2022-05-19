@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <link
+      href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h1>Generator parole</h1>
+      <h2>Iurașcu Alexandru Valentin, MTI2</h2>
+      <h3 style="padding-bottom: 30px">MSFS</h3>
+      <input id="input" type="text" value="50" />
+      <button id="generate">Generează</button>
+    </div>
+
+    <div
+      style="
+        margin-top: 30px !important;
+        margin: 0 auto;
+        border: 1px solid;
+        height: 350px;
+        width: 400px;
+        overflow: auto;
+      "
+    >
+      <p id="results"></p>
+    </div>
+    <div style="text-align: center">
+      <p style="padding-top: 30px">
+        <b>Parolele generate pot face parte din 4 tipuri de securitate:</b>
+      </p>
+      <p>Securitatea 1 - implicit cea mai slaba, necesita 6 caractere</p>
+      <p>Securitatea 2 - necesita 8 caractere, litere si cifre</p>
+      <p>Securitatea 3 - necesita 8 caractere, litere mici, mari si cifre</p>
+      <p>
+        Securitatea 4 - necesita 12 caractere, litere mici, mari, cifre si
+        simboluri
+      </p>
+    </div>
+    <div class="display">
+      <h3 style="text-align: center">
+        In urmatoarele diagrame verificam procentul de acceptare din punct de
+        vedere al marimei parolei:
+      </h3>
+      <div style="display: flex; justify-content: center">
+        <div style="width: 250px">
+          <canvas id="myChart1" width="250" height="250"></canvas>
+        </div>
+        <div style="width: 250px">
+          <canvas id="myChart2" width="250" height="250"></canvas>
+        </div>
+        <div style="width: 250px">
+          <canvas id="myChart3" width="250" height="250"></canvas>
+        </div>
+      </div>
+
+      <h3 style="text-align: center">
+        In urmatoarele diagrame verificam procentul de acceptare din punct de
+        vedere al simbolurilor, pentru fiecare nivel de securitate.
+      </h3>
+      <div style="display: flex; justify-content: center">
+        <div style="width: 250px">
+          <canvas id="securitate1" width="250" height="250"></canvas>
+        </div>
+        <div style="width: 250px">
+          <canvas id="securitate2" width="250" height="250"></canvas>
+        </div>
+        <div style="width: 250px">
+          <canvas id="securitate3" width="250" height="250"></canvas>
+        </div>
+        <div style="width: 250px">
+          <canvas id="securitate4" width="250" height="250"></canvas>
+        </div>
+      </div>
+
+      <h3 style="text-align: center">
+        In urmatoarele diagrame vom afisa rezultatele intregului proces de
+        verificare a parolelor in functie de nivelul de securitate.
+      </h3>
+
+      <div style="display: flex; justify-content: center">
+        <div style="width: 800px">
+          <canvas id="total"></canvas>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center">
+        <div style="width: 250px">
+          <h5 style="text-align: center">Parola slaba:</h5>
+          <canvas id="total1" width="250" height="250"></canvas>
+        </div>
+        <div style="width: 250px">
+          <h5 style="text-align: center">Parola moderata:</h5>
+          <canvas id="total2" width="250" height="250"></canvas>
+        </div>
+        <div style="width: 250px">
+          <h5 style="text-align: center">Parola puternica:</h5>
+          <canvas id="total3" width="250" height="250"></canvas>
+        </div>
+        <div style="width: 250px">
+          <h5 style="text-align: center">Parola ultra:</h5>
+          <canvas id="total4" width="250" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+    <h5 style="padding-top: 40px; padding-bottom: 20px; text-align: center">
+      Problema 1 Modelul Goel-Okumoto - Lab 5
+    </h5>
+    <div style="display: flex; justify-content: center">
+      <input id="text-file" type="file" />
+      <!-- <div style="width: 800px"> -->
+    </div>
+    <div style="display: flex; justify-content: center">
+      <canvas
+        id="myChart"
+        style="width: 100%; max-width: 800px; height: 300px"
+      ></canvas>
+    </div>
+    <br />
+    <canvas
+      id="myChart"
+      style="width: 100%; max-width: 800px; height: 300px"
+    ></canvas>
+    <!-- </div> -->
+    <!-- <div id="mocha"></div>
+    <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+    <script src="https://cdn.rawgit.com/chaijs/chai/3.5.0/chai.js"></script>
+    <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="generatorParole.js"></script>
+    <script src="tests.js"></script>
+    <script src="grafice.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script>
+      const mocha = window.mocha;
+      mocha.setup("bdd");
+    </script> -->
+    <!-- <script>
+      mocha.checkLeaks();
+      mocha.run();
+    </script> -->
+  </body>
+</html>
